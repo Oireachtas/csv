@@ -72,6 +72,7 @@ class ConvertMbstringEncoding extends php_user_filter
     /**
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function onCreate()
     {
         if ( strpos($this->filtername, self::FILTER_NAMESPACE) !== 0 ) {
@@ -97,6 +98,7 @@ class ConvertMbstringEncoding extends php_user_filter
      * @param $closing
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function filter($in, $out, &$consumed, $closing)
     {
         while ( $bucket = stream_bucket_make_writeable($in) ) {
